@@ -8,7 +8,13 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio.listen(server);
 
+//settings
+
+app.set('port', process.env.PORT || 80);
+
 require('./sockets')(io);
+
+
 
 
 
@@ -16,8 +22,8 @@ require('./sockets')(io);
 app.use(express.static(path.join(__dirname,'public')));
 
 //starting server
-server.listen(80, ()=>{
+server.listen(app.get('port'), ()=>{
 
-    console.log('server on port 80');
+    console.log('server on port', app.get('port'));
 
 });
