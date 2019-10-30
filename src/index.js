@@ -8,11 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio.listen(server);
 
-io.on('connection', socket =>{
-
-    console.log("nuevo usuario conectado");
-
-});
+require('./sockets')(io);
 
 
 
