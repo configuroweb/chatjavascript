@@ -15,7 +15,8 @@ $(function(){
     $messageForm.submit( e => {
 
         e.preventDefault();
-        console.log($messageBox.val());
+        socket.emit('send message', $messageBox.val());
+        $messageBox.val('');
     });
 
 
