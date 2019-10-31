@@ -52,10 +52,9 @@ $(function(){
         $messageBox.val('');
     });
 
-    socket.on('new message', function(data) {
+    socket.on('new message', function (data) {
 
-       $chat.append(data + '<br/>');
-
+       $chat.append('<b>' + data.nick + '</b>: ' + data.msg + '<br/>');
     });
 
     socket.on('usernames', data =>{
