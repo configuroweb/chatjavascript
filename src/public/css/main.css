@@ -10,3 +10,14 @@ background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, F
 display: none;
 
 }
+
+.error {
+    color:red;
+}
+
+.whisper {
+
+    color:gray;
+    font-style: italic;
+
+}
